@@ -1,0 +1,343 @@
+/*
+    Base
+*/
+
+/* *, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+} */
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h1{
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+p, li, span, h3{
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+main{
+    margin-top: 70px;
+}
+
+/*------------------------------------------------------------------------*/
+
+
+/* 
+    Header - Commun à toutes les pages
+*/
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.container_header {
+    display: flex;
+}
+
+.container_header-img{
+    width: 350px;
+    height: 350px;
+    background-color: aquamarine;
+}
+
+.container_header-text{
+    margin: 40px auto;
+    text-align: center;
+}
+
+.container_header-text p {
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 30px;
+    width: 80%;
+    margin: auto;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-top: 40px;
+}
+
+header nav ul li{
+    font-size: 1.6em;
+    transform: scale(1);
+    transition: 500ms;
+}
+
+header nav ul li:hover{
+    transform: scale(1.2);
+}
+
+/*------------------------------------------------------------------------*/
+
+/*
+    Footer - Commun à toutes les pages
+*/
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+
+.footer_contact ul {
+    list-style-type: none;
+    text-align: center;
+    width: 400px;
+}
+
+.footer_polite {
+    width: 600px;
+    background-color: aliceblue;
+}
+
+/*
+    Main - Homepage
+*/
+.main_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_top-text {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+}
+
+.main_top-img {
+    width: 350px;
+    height: 400px;
+    border-radius: 50%;
+    margin-right: 80px;
+    background-color: aquamarine;
+}
+
+.main_bot-intro {
+    margin: 50px 0 ;
+}
+
+.main_bot-container-card{
+    display: flex;
+    justify-content: space-around;
+}
+
+.main_bot-card {
+    width: 30%;
+    height: 180px;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------------*/
+
+/*
+    Main - Pro page
+*/
+.title_professionnels{
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.tarif_professionnels-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tarif_professionnels-container h2 {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.tarif_professionnels-container h3 {
+    text-align: center;
+}
+
+.tarif_professionnels-onsite{
+    width: 40%;
+}
+
+.tarif_professionnels-onsite ul{
+    margin-top: 100px;
+}
+
+.tarif_professionnels-athome{
+    width: 40%;
+}
+
+.mission_ponctual-container h2{
+    text-align: center;
+}
+
+.mission_ponctual-intro{
+    width: 70%;
+    text-align: center;
+    margin: auto;
+}
+
+.mission_ponctual-audio h3 span, .mission_ponctual-page h3 span {
+    font-size: 13px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.mission_ponctual-audio h3, .mission_ponctual-page h3 {
+    font-size: 1.5em;
+}
+
+.mission_ponctual-audio p , .mission_ponctual-page p{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 300px;
+}
+
+.mission_ponctual-audio p span, .mission_ponctual-page p span{
+    font-size: 1em;
+}
+
+.mission_ponctual-audio {
+    margin-top: 60px;
+}
+
+.move_fee{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+/*------------------------------------------------------------------------*/
+
+/*
+    Main particular page
+*/
+.title_particular{
+    width: 65%;
+    text-align: center;
+    margin: 50px auto;
+}
+
+.main_top-tarif li {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.main_top-tarif-info {
+    width: 100%;
+    display: block;
+    font-size: 1em;
+}
+
+.main_top-tarif-info-pointer{
+    font-size: 1em;
+}
+
+.main_top-tarif-price{
+    position: relative;
+    bottom: 55px;
+}
+
+table{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+td{
+ font-size: 1.2em;
+ padding: 20px;
+}
+
+.array_left{
+    text-align: start;
+}
+
+.array_info{
+    font-size: 0.8em;
+}
+
+.tarif_info{
+    margin-top: 30px;
+    font-size: 12px;
+    font-size: 12px;
+}
+
+/*------------------------------------------------------------------------*/
+
+/*
+    Contact page
+*/
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 1px solid black;
+    width: 40%;
+    height: 400px;
+}
+
+
+form input {
+    width: 50%;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+}
+
+#textarea{
+    width: 300px;
+    height: 100px;
+    text-align: start;
+}
+
+.contact_form-info{
+    text-align: center;
+    font-style: italic;
+
+}
+
+.contact_info-contianer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.contact_info-contianer p{
+    width: 600px;
+    text-align: justify;
+}
+
+.contact-container-img{
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+}
+
+/*------------------------------------------------------------------------*/
