@@ -7,7 +7,7 @@
     <title>La pluce Carrey - Particuliers</title>
     <meta
       name="description"
-      content="Ajouter une description de 140 à 160 mots + ajout de mot cle"
+      content="Je propose des prestations pour tous travaux de secrétariat et bureautique à destination des professionnels et/ou des particuliers, sur site ou à distance."
     />
     <meta name="keywords" />
     <link rel="stylesheet" href="index.css" />
@@ -17,6 +17,10 @@
         lié le css
         lié le js en fin de page
     -->
+    <script
+      src="https://kit.fontawesome.com/7931f6c474.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -24,33 +28,39 @@
         <div class="container_header">
           <a href="./index.html" class="container_header-img">
             <img
-              src="./img/Logo_la_plume.png"
+              src="./img/Logo5_transparent.png"
               alt="Logo de l'entreprise la plume Carrey"
             />
           </a>
           <div class="container_header-text">
-            <p>Secrétaire administrative indépendante & écrivain public</p>
-            <p>
+            <h1 class="place_title-header-flex">
+              <span>Ecrivain</span>
+              <span>Public</span>
+            </h1>
+            <p class="container_header-text-particular">
               Vous êtes un particulier, un étudiant, je mets mes compétences
               d’écrivain public à votre service
             </p>
           </div>
+          <div class="container_header-picto">LA plume bleu</div>
         </div>
         <nav>
           <ul>
             <li><a href="./index.html">Accueil</a></li>
             <li><a href="./professionnels.html">Professionnels</a></li>
-            <li><a href="./particuliers.html">Particuliers</a></li>
+            <li class="header_li-selected">
+              <a href="./particuliers.html">Particuliers</a>
+            </li>
             <li><a href="./contact.html">Contact</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
-        <h1 class="title_particular">
+        <h2 class="title_particular">
           Pour avoir l'assurance de presenter un document et/ou un courrier
           agreable à lire pour tous vos destinataires
-        </h1>
+        </h2>
         <div class="main_top">
           <ul class="main_top-tarif">
             <li>
@@ -96,16 +106,16 @@
             <td></td>
             <td>
               Corrections basiques<br />
-              <span class="tarif_info"
-                >Correction basique : orthographe, grammaire, syntaxe,
-                conjugaison, typographie, ponctuation</span
+              <span class="tarif_info tarif_info-title"
+                >Orthographe, grammaire, syntaxe, conjugaison, typographie,
+                ponctuation</span
               >
             </td>
             <td>
               Corrections approfondies<br />
-              <span class="tarif_info"
-                >Correction approfondie : reformulation (syntaxe, réécriture,
-                allègement des tournures…)</span
+              <span class="tarif_info tarif_info-title"
+                >Reformulation (syntaxe, réécriture, allègement des
+                tournures…)</span
               >
             </td>
           </tr>
@@ -117,7 +127,7 @@
           <tr>
             <td class="array_left">
               CV<br />
-              <span class="array_info"
+              <span class="tarif_info"
                 >(selon longeur, complexité et conception complète ou
                 partielle)</span
               >
@@ -135,9 +145,9 @@
               Note de synthèse(*)<br />
               Rapport de stage(*)<br />
               Mémoire(*)<br />
-              Thèse<br />
+              Thèse(*)<br />
               <span class="tarif_info"
-                >(*) Tarifs à la page (1 page = environ 1500 signes espaces
+                >(*) Tarifs à la page (1 page = environ 3000 signes espaces
                 compris)</span
               >
             </td>
@@ -152,9 +162,20 @@
             <li>Christine Robillard-Carrey</li>
             <li>La plume Carrey</li>
             <li>contact@laplumecarrey.com</li>
-            <li>06 24 50 48 59</li>
+            <li>06 24 50 48 59 / 03 86 78 63 38</li>
             <li>Siège social :</li>
             <li>5 rue Maris France Gény 58110 Tintury</li>
+            <li class="footer_contact-social">
+              <a
+                href="https://www.facebook.com/laplumecarrey.fr"
+                target="_blank"
+                ><i class="fa-brands fa-square-facebook"></i></a
+              ><a
+                href="https://www.linkedin.com/in/christine-robillard-carrey-462a5361/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </li>
           </ul>
         </div>
         <div class="footer_polite">
@@ -169,11 +190,17 @@
               837 031 00020
             </li>
             <li>
-              Code APE : 8211ZP – Services administratifs divers pour les
+              Code APE : 8211Z – Services administratifs divers pour les
               professionnels et particuliers
             </li>
           </ul>
         </div>
+        <p>
+          En application de la réglementation relative à la protection des
+          données personnelles, vous disposez gratuitement d'un droit d'accès,
+          de réctification, de suppression et d'opposition. Envoyer votre
+          demande par email à contact@laplumecarrey.com
+        </p>
       </footer>
     </div>
   </body>

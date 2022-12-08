@@ -1,0 +1,22 @@
+{
+  "name": "la-plume-carrey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oreilleu/La-plume-Carrey.git"
+  },
+  "author": "Oreille",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oreilleu/La-plume-Carrey/issues"
+  },
+  "homepage": "https://github.com/Oreilleu/La-plume-Carrey#readme",
+  "dependencies": {
+    "@emailjs/browser": "^3.10.0"
+  }
+}

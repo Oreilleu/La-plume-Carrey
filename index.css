@@ -1,13 +1,17 @@
 /*
     Base
 */
+@import url('https://fonts.cdnfonts.com/css/bradley-hand-2');
+@import url('https://fonts.cdnfonts.com/css/adelle');
 @import url('https://fonts.googleapis.com/css2?family=Arapey&family=Catamaran:wght@100;200&family=Della+Respira&display=swap');
 body{
-    background: url(./img/fond3.jpg);
+    background: url(./img/fond1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
+
 
 strong {
     font-weight: 100;
@@ -19,25 +23,53 @@ a{
 }
 
 h1{
-    font-size: 1.5em;
-    font-weight: 700;
-    font-family: 'Arapey', serif;
+    height: 100%;
 }
 
-h2{
+h1 span{
     font-size: 1.4em;
-    font-weight: 600;
-    font-family: sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* font-family: 'Arapey', serif; */
+    font-family: 'Adelle', sans-serif;
+    }
+
+/*
+    page pro en full adelle
+    page par en full bradley hand
+*/
+h2{
+    font-size: 1.6em;
+    font-weight: 700;
+    /* font-family: 'Bradley Hand', sans-serif; */
+    font-family: 'Adelle', sans-serif;
 }
 
-p, li, span, h3{
+h3{
+    font-size: 1.5em;
+    /* font-family: 'Bradley Hand', sans-serif; */
+    font-family: 'Adelle', sans-serif;
+}
+
+p, li, span {
     font-size: 1.3em;
     font-weight: 400;
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Adelle', sans-serif;
+    /* font-family: 'Bradley Hand', sans-serif; */
+
+}
+
+table, form{
+    font-family: 'Adelle', sans-serif;
 }
 
 main{
     margin-top: 70px;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
 }
 
 /*------------------------------------------------------------------------*/
@@ -46,53 +78,35 @@ main{
 /* 
     Header - Commun à toutes les pages
 */
-header {
-    border-bottom: 1px solid lightblue;
-}
-
 .place_title-header{
     font-size: 2.2em;
     margin-top: 50px;
 }
 
-.container{
-    width: 90%;
-    margin: auto;
-}
-
 .container_header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .container_header-img{
-    width: 350px;
-    height: 350px;
-}
-
-.container_header-text{
-    margin:  auto;
-    text-align: center;
+    height: 100%;
 }
 
 .place_title-header-flex{
-    font-size: 1.7em;
-    margin-top: 50px;
+    font-size: 1.5em;
     display: flex;
     flex-direction: column;
-}
-
-.place_title-header-flex span:first-child{
-    background-color: red;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .container_header-text p {
     text-align: center;
     font-size: 1.5em;
-    padding-top: 30px;
-    width: 80%;
-    margin: auto;
+    width: 500px;
+    margin-top: 50px ;
+    color: lightblue;
 }
 
 header nav ul{
@@ -100,17 +114,38 @@ header nav ul{
     justify-content: space-around;
     list-style-type: none;
     margin-top: 40px;
-    margin-top: 70px;
+    border-top: 1px solid lightblue;
+    border-bottom: 1px solid lightblue;
 }
 
 header nav ul li{
     font-size: 1.6em;
-    transform: scale(1);
+    height: 100%;
+    padding: 15px;
     transition: 500ms;
 }
 
 header nav ul li:hover{
-    transform: scale(1.2);
+    background-color: lightblue;
+}
+
+.header_li-selected{
+    background-color: lightblue;
+}
+
+.container_header-picto{
+    width: 300px;
+    height: 200px;
+    background-color: aqua;
+}
+
+.container_test-header {
+    background: url(./img/fond_test.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
 }
 
 /*------------------------------------------------------------------------*/
@@ -137,6 +172,7 @@ footer{
 .footer_polite {
     width: 70%;
     text-align: center;
+    margin-top: 20px;
 }
 
 .footer_polite p{
@@ -145,7 +181,16 @@ footer{
 
 .footer_polite ul li{
     list-style-type: none;
-    margin: 15px 0;
+}
+
+.footer_contact-social{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+i {
+    font-size: 30px ;
+
 }
 
 /*
@@ -171,7 +216,12 @@ footer{
     object-fit: cover;
 }
 
-.main_bot-intro {
+.tarif-professionnels-price{
+    font-size: 15px;
+}
+
+
+/* .main_bot-intro {
     margin: 50px 0 ;
 }
 
@@ -190,7 +240,7 @@ footer{
 .main_bot-card p{
     width: 60%;
     margin: auto;
-}
+} */
 
 /*------------------------------------------------------------------------*/
 
@@ -201,6 +251,11 @@ footer{
     width: 100%;
     text-align: center;
     display: block;
+}
+
+.intro_professionnels{
+    text-align: center;
+    margin-top: 30px;
 }
 
 .tarif_professionnels-container{
@@ -297,13 +352,13 @@ footer{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .main_top-tarif-info {
     width: 100%;
     display: block;
-    font-size: 1em;
+    font-size: 0.7em;
 }
 
 .main_top-tarif-info-pointer{
@@ -325,7 +380,7 @@ table{
 }
 
 td{
- font-size: 1.2em;
+ font-size: 1.1em;
  padding: 20px;
 }
 
@@ -333,13 +388,18 @@ td{
     text-align: start;
 }
 
-.array_info{
-    font-size: 0.8em;
+.tarif_info{
+    font-size: 10px;
 }
 
-.tarif_info{
-    font-size: 12px;
+table tr td {
+    /* background-color: aqua; */
 }
+
+/* .tarif_info-title{
+    background-color: red;
+    width: 300px;
+} */
 
 
 /*------------------------------------------------------------------------*/
@@ -440,10 +500,11 @@ form input:hover{
 
 .contact-container-info{
     transform: rotate(10deg);
-    border: 1px solid lightgrey;
+    /* border: 1px solid black; */
     border-radius: 10px;
-    box-shadow: 15px 15px 15px lightgrey;
+    box-shadow: 15px 15px 40px black;
     width: 350px;
+    background-color: white;
 }
 
 .contact-container-info h2, .contact-container-info p{
@@ -454,3 +515,37 @@ form input:hover{
 }
 
 /*------------------------------------------------------------------------*/
+
+/*
+    Test div pour add image
+*/
+
+.main_bot-container-card-image {
+    display: flex;
+}
+
+.main_bot-card p, .main_bot-card h2 {
+    margin: 0
+}
+
+.main_bot-container-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 30px;
+}
+
+.main_bot-card {
+    margin: 15px 0
+}
+
+
+
+.test_image-index {
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+}
+
+

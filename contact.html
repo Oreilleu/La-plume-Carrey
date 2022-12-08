@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La pluce Carrey - Contact</title>
+
     <meta
       name="description"
-      content="Ajouter une description de 140 à 160 mots + ajout de mot cle"
+      content="Je propose des prestations pour tous travaux de secrétariat et bureautique à destination des professionnels et/ou des particuliers, sur site ou à distance."
     />
-    <meta name="keywords" />
+    <meta
+      name="keywords"
+      content="La plume Carrey, Christine Robillard-carrey, ecrivain public"
+    />
     <link rel="stylesheet" href="index.css" />
 
     <!-- Ajout balise google search + google analitycs
@@ -17,6 +21,10 @@
         lié le css
         lié le js en fin de page
     -->
+    <script
+      src="https://kit.fontawesome.com/7931f6c474.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -24,27 +32,35 @@
         <div class="container_header">
           <a href="./index.html" class="container_header-img">
             <img
-              src="./img/Logo_la_plume.png"
+              src="./img/Logo5_transparent.png"
               alt="Logo de l'entreprise la plume Carrey"
             />
           </a>
-          <div class="container_header-text">
-            <p>Secrétaire administrative indépendante & écrivain public</p>
-            <p>Contact</p>
+          <div>
+            <h1 class="place_title-header-flex container_header-text">
+              <span>Secrétaire</span>
+              <span>administrative</span>
+              <span>indépendante</span>
+              <span>&</span>
+              <span>écrivain public</span>
+            </h1>
           </div>
+          <div class="container_header-picto">Puzzle</div>
         </div>
         <nav>
           <ul>
             <li><a href="./index.html">Accueil</a></li>
             <li><a href="./professionnels.html">Professionnels</a></li>
             <li><a href="./particuliers.html">Particuliers</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li class="header_li-selected">
+              <a href="./contact.html">Contact</a>
+            </li>
           </ul>
         </nav>
       </header>
       <main>
-        <h1 class="title_contact">Demande de contact !</h1>
-        <form>
+        <h2 class="title_contact">Vous avez un projet ? Contactez moi !</h2>
+        <form onsubmit="submitForm()">
           <div class="top_form">
             <div class="top_form-input">
               <label for="name">Prénom</label>
@@ -89,7 +105,8 @@
             </p>
             <p id="small">
               (*) Frais de déplacement : à partir de 30 km (A/R) depuis le siège
-              social : 0,58 € / Km supplémentaire
+              social :<br />
+              0,58 € / Km supplémentaire
             </p>
             <p id="small">
               (Barème 2022 :
@@ -117,6 +134,17 @@
                 >contact@laplumecarrey.com</a
               >
             </p>
+            <p class="footer_contact-social">
+              <a
+                href="https://www.facebook.com/laplumecarrey.fr"
+                target="_blank"
+                ><i class="fa-brands fa-square-facebook"></i></a
+              ><a
+                href="https://www.linkedin.com/in/christine-robillard-carrey-462a5361/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </p>
           </div>
         </div>
       </main>
@@ -126,9 +154,20 @@
             <li>Christine Robillard-Carrey</li>
             <li>La plume Carrey</li>
             <li>contact@laplumecarrey.com</li>
-            <li>06 24 50 48 59</li>
+            <li>06 24 50 48 59 / 03 86 78 63 38</li>
             <li>Siège social :</li>
             <li>5 rue Maris France Gény 58110 Tintury</li>
+            <li class="footer_contact-social">
+              <a
+                href="https://www.facebook.com/laplumecarrey.fr"
+                target="_blank"
+                ><i class="fa-brands fa-square-facebook"></i></a
+              ><a
+                href="https://www.linkedin.com/in/christine-robillard-carrey-462a5361/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </li>
           </ul>
         </div>
         <div class="footer_polite">
@@ -143,12 +182,28 @@
               837 031 00020
             </li>
             <li>
-              Code APE : 8211ZP – Services administratifs divers pour les
+              Code APE : 8211Z – Services administratifs divers pour les
               professionnels et particuliers
             </li>
           </ul>
         </div>
+        <p>
+          En application de la réglementation relative à la protection des
+          données personnelles, vous disposez gratuitement d'un droit d'accès,
+          de réctification, de suppression et d'opposition. Envoyer votre
+          demande par email à contact@laplumecarrey.com
+        </p>
       </footer>
     </div>
+    <script src="./index.js" type="text/javascript"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("_mCJ-wnI1bVbtTscw");
+      })();
+    </script>
   </body>
 </html>
