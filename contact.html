@@ -29,12 +29,13 @@
             />
           </a>
           <div class="container_header-text">
-            <h1>Secrétaire administrative indépendante & écrivain public</h1>
+            <p>Secrétaire administrative indépendante & écrivain public</p>
             <p>Contact</p>
           </div>
         </div>
         <nav>
           <ul>
+            <li><a href="./index.html">Accueil</a></li>
             <li><a href="./professionnels.html">Professionnels</a></li>
             <li><a href="./particuliers.html">Particuliers</a></li>
             <li><a href="./contact.html">Contact</a></li>
@@ -42,15 +43,30 @@
         </nav>
       </header>
       <main>
+        <h1 class="title_contact">Demande de contact !</h1>
         <form>
-          <label for="name">Prénom</label>
-          <input type="text" id="name" />
-          <label for="surname">Nom</label>
-          <input type="text" id="surname" />
-          <label for="email">Email</label>
-          <input type="email" id="email" />
+          <div class="top_form">
+            <div class="top_form-input">
+              <label for="name">Prénom</label>
+              <input type="text" id="name" maxlength="40" />
+            </div>
+            <div class="top_form-input">
+              <label for="surname">Nom de famille</label>
+              <input type="text" id="surname" maxlength="40" />
+            </div>
+          </div>
+          <div class="top_form">
+            <div class="top_form-input">
+              <label for="email">Email</label>
+              <input type="email" id="email" maxlength="80" />
+            </div>
+            <div class="top_form-input">
+              <label for="phone">Téléphone</label>
+              <input type="phone" id="phone" maxlength="10" />
+            </div>
+          </div>
           <label for="textarea">Message</label>
-          <input type="textarea" id="textarea" />
+          <input type="textarea" id="textarea" maxlength="400" wrap="hard" />
           <button type="submit">Envoyer</button>
         </form>
         <p class="contact_form-info">
@@ -71,21 +87,36 @@
               Pour toutes prestations à réaliser en urgence (dans la journée, le
               weekend ou jours fériés) : majoration de 30 % du tarif convenu.
             </p>
-            <p>
+            <p id="small">
               (*) Frais de déplacement : à partir de 30 km (A/R) depuis le siège
               social : 0,58 € / Km supplémentaire
             </p>
-            <p>
+            <p id="small">
               (Barème 2022 :
               https://www.service-public.fr/particuliers/actualites/A14686)
             </p>
           </div>
 
-          <div class="contact-container-img">
-            <img
-              src=""
-              alt="Photo parchemin avec information de contact de Christine Robillard-Carrey"
-            />
+          <div class="contact-container-info">
+            <h2>Christine ROBILLARD-CARREY</h2>
+            <p>Siège social :</p>
+            <p>5, rue Marie France Gény</p>
+            <p>58 110 TINTURY</p>
+            <br />
+            <p>Tel : 06.24.50.48.59 / 03.86.78.63.38</p>
+            <br />
+            <p>Horaires :</p>
+            <p>Du lundi au jeudi</p>
+            <p>9 h 00 à 12 h 30 / 13 h 30 à 18 h 00</p>
+            <p>Le vendredi</p>
+            <p>9 h 00 à 12 h 30 / 13 h 30 à 17 h 30</p>
+            <br />
+            <p>Email :</p>
+            <p>
+              <a href="mailto:contact@laplumecarrey.com"
+                >contact@laplumecarrey.com</a
+              >
+            </p>
           </div>
         </div>
       </main>
@@ -101,7 +132,21 @@
           </ul>
         </div>
         <div class="footer_polite">
-          Ajout des mentions légale et politique de confidentialité
+          <p>Micro-entreprise créée le 1er octobre 2022</p>
+          <ul>
+            <li>
+              Forme juridique : Entreprise individuelle. En base de TVA non
+              applicable (art. 293B du CGI)
+            </li>
+            <li>
+              Immatriculée au Registre des Métiers de Nevers sous le numéro 812
+              837 031 00020
+            </li>
+            <li>
+              Code APE : 8211ZP – Services administratifs divers pour les
+              professionnels et particuliers
+            </li>
+          </ul>
         </div>
       </footer>
     </div>

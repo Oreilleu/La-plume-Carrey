@@ -1,12 +1,17 @@
 /*
     Base
 */
+@import url('https://fonts.googleapis.com/css2?family=Arapey&family=Catamaran:wght@100;200&family=Della+Respira&display=swap');
+body{
+    background: url(./img/fond3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 
-/* *, *::after, *::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-} */
+strong {
+    font-weight: 100;
+}
 
 a{
     text-decoration: none;
@@ -16,16 +21,19 @@ a{
 h1{
     font-size: 1.5em;
     font-weight: 700;
+    font-family: 'Arapey', serif;
 }
 
 h2{
     font-size: 1.4em;
     font-weight: 600;
+    font-family: sans-serif;
 }
 
 p, li, span, h3{
     font-size: 1.3em;
     font-weight: 400;
+    font-family: 'Catamaran', sans-serif;
 }
 
 main{
@@ -38,6 +46,15 @@ main{
 /* 
     Header - Commun à toutes les pages
 */
+header {
+    border-bottom: 1px solid lightblue;
+}
+
+.place_title-header{
+    font-size: 2.2em;
+    margin-top: 50px;
+}
+
 .container{
     width: 90%;
     margin: auto;
@@ -50,12 +67,24 @@ main{
 .container_header-img{
     width: 350px;
     height: 350px;
-    background-color: aquamarine;
 }
 
 .container_header-text{
-    margin: 40px auto;
+    margin:  auto;
     text-align: center;
+}
+
+.place_title-header-flex{
+    font-size: 1.7em;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.place_title-header-flex span:first-child{
+    background-color: red;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .container_header-text p {
@@ -71,6 +100,7 @@ header nav ul{
     justify-content: space-around;
     list-style-type: none;
     margin-top: 40px;
+    margin-top: 70px;
 }
 
 header nav ul li{
@@ -92,19 +122,30 @@ header nav ul li:hover{
 footer{
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 0.7em;
+    border-top: 1px solid lightblue;
 }
 
 
 .footer_contact ul {
     list-style-type: none;
     text-align: center;
-    width: 400px;
 }
 
 .footer_polite {
-    width: 600px;
-    background-color: aliceblue;
+    width: 70%;
+    text-align: center;
+}
+
+.footer_polite p{
+    margin-top: 0;
+}
+
+.footer_polite ul li{
+    list-style-type: none;
+    margin: 15px 0;
 }
 
 /*
@@ -127,7 +168,7 @@ footer{
     height: 400px;
     border-radius: 50%;
     margin-right: 80px;
-    background-color: aquamarine;
+    object-fit: cover;
 }
 
 .main_bot-intro {
@@ -143,6 +184,12 @@ footer{
     width: 30%;
     height: 180px;
     text-align: center;
+    margin-bottom: 50px;
+}
+
+.main_bot-card p{
+    width: 60%;
+    margin: auto;
 }
 
 /*------------------------------------------------------------------------*/
@@ -184,6 +231,10 @@ footer{
     width: 40%;
 }
 
+.tarif_professionnels-athome li, .tarif_professionnels-onsite li {
+    margin: 15px 0;
+}
+
 .mission_ponctual-container h2{
     text-align: center;
 }
@@ -193,6 +244,7 @@ footer{
     text-align: center;
     margin: auto;
 }
+
 
 .mission_ponctual-audio h3 span, .mission_ponctual-page h3 span {
     font-size: 13px;
@@ -204,13 +256,13 @@ footer{
     font-size: 1.5em;
 }
 
-.mission_ponctual-audio p , .mission_ponctual-page p{
+.mission_ponctual-audio li , .mission_ponctual-page li{
     display: flex;
     justify-content: space-between;
     margin: 10px 300px;
 }
 
-.mission_ponctual-audio p span, .mission_ponctual-page p span{
+.mission_ponctual-audio li span, .mission_ponctual-page li span{
     font-size: 1em;
 }
 
@@ -219,7 +271,7 @@ footer{
 }
 
 .move_fee{
-    text-align: center;
+    /* text-align: center; */
     margin-top: 30px;
     font-size: 12px;
 }
@@ -233,6 +285,11 @@ footer{
     width: 65%;
     text-align: center;
     margin: 50px auto;
+}
+
+.main_top-tarif {
+    margin: auto;
+    width: 50%;
 }
 
 .main_top-tarif li {
@@ -281,10 +338,9 @@ td{
 }
 
 .tarif_info{
-    margin-top: 30px;
-    font-size: 12px;
     font-size: 12px;
 }
+
 
 /*------------------------------------------------------------------------*/
 
@@ -292,30 +348,72 @@ td{
     Contact page
 */
 
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    border: 1px solid black;
-    width: 40%;
-    height: 400px;
+.title_contact{
+    text-align: center;
+    margin-bottom: 50px;
 }
 
+.top_form{
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 30px; */
+}
 
-form input {
-    width: 50%;
-    border-radius: 10px;
+form{
+    width: 70%;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    width: 350px;
+    height: 40px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
     outline: none;
+    transition: 300ms;
     text-align: center;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+form label {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+form button {
+    width: 250px;
+    height: 70px;
+    border-radius: 20px;
+    /* background-color: aqua; */
+    border: none;
+    margin: 10px auto;
+    background-color: lightgray;
+    transition: 400ms;
+}
+
+form button:hover {
+    background-color: aqua;
 }
 
 #textarea{
-    width: 300px;
-    height: 100px;
-    text-align: start;
+    width: 100%;
+    height: 160px;
+    text-align: initial;
+    padding-left: 5px;
 }
+
+.top_form-input{
+    display: flex;
+    flex-direction: column;
+}
+
+form input:hover{
+    border-color: lightblue;
+}
+
 
 .contact_form-info{
     text-align: center;
@@ -325,19 +423,34 @@ form input {
 
 .contact_info-contianer{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 50px;
+    margin-top: 80px;
 }
 
 .contact_info-contianer p{
     width: 600px;
     text-align: justify;
+    font-size: 1em;
+    width: 400px;
+}
+#small{
+    font-size: 0.8em;
 }
 
-.contact-container-img{
-    width: 500px;
-    height: 500px;
-    background-color: aquamarine;
+.contact-container-info{
+    transform: rotate(10deg);
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 15px 15px 15px lightgrey;
+    width: 350px;
+}
+
+.contact-container-info h2, .contact-container-info p{
+    text-align: center;
+    margin: 10px;
+    font-size: 1em;
+    width: 350px;
 }
 
 /*------------------------------------------------------------------------*/
