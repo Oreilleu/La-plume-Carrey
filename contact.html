@@ -49,13 +49,13 @@
             />
           </a>
           <div class="container_image-header container_image-header-contact">
-            <h1 class="place_title-header-flex container_header-text">
+            <!-- <h1 class="place_title-header-flex container_header-text">
               <span>Secrétaire</span>
               <span>administrative</span>
               <span>indépendante</span>
               <span>&</span>
               <span>écrivain public</span>
-            </h1>
+            </h1> -->
           </div>
         </div>
         <nav>
@@ -70,7 +70,7 @@
         </nav>
       </header>
       <main>
-        <h2 class="title_contact">Vous avez un projet ? Contactez moi !</h2>
+        <h1 class="title_contact">Vous avez un projet ? Contactez moi !</h1>
         <form class="form_email">
           <div class="container-error"></div>
           <div class="top_form">
@@ -104,6 +104,7 @@
         </form>
         <div class="container_form-captcha">
           <h3>Vérification anti-spam</h3>
+          <div class="captcha-error"></div>
           <form>
             <div class="container_captcha">
               <div class="captcha"></div>
@@ -111,11 +112,12 @@
             </div>
             <input
               type="text"
-              value="Recopier le captcha"
+              placeholder="Recopier le captcha"
               class="value-captcha"
             />
             <input
               type="button"
+              class="button"
               value="Verifier"
               onclick="checkCaptchaThenSendMail()"
             />
@@ -155,31 +157,17 @@
             <p>Siège social :</p>
             <p>5, rue Marie France Gény</p>
             <p>58 110 TINTURY</p>
-            <br />
             <p>Tel : 06.24.50.48.59 / 03.86.78.63.38</p>
-            <br />
             <p>Horaires :</p>
             <p>Du lundi au jeudi</p>
             <p>9 h 00 à 12 h 30 / 13 h 30 à 18 h 00</p>
             <p>Le vendredi</p>
             <p>9 h 00 à 12 h 30 / 13 h 30 à 17 h 30</p>
-            <br />
             <p>Email :</p>
             <p>
               <a href="mailto:contact@laplumecarrey.com"
                 >contact@laplumecarrey.com</a
               >
-            </p>
-            <p class="footer_contact-social">
-              <a
-                href="https://www.facebook.com/laplumecarrey.fr"
-                target="_blank"
-                ><i class="fa-brands fa-square-facebook"></i></a
-              ><a
-                href="https://www.linkedin.com/in/christine-robillard-carrey-462a5361/"
-                target="_blank"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
             </p>
           </div>
         </div>

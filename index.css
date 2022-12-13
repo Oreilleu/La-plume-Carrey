@@ -25,11 +25,12 @@ h1{
 }
 
 h1 span{
-    font-size: 1.4em;
+    font-size: 1.7em;
     font-weight: 700;
     text-transform: uppercase;
     font-family: 'Adelle', sans-serif;
-    }
+    margin: 5px 0;
+}
 
 h2{
     font-size: 1.6em;
@@ -42,7 +43,7 @@ h3{
     font-family: 'Adelle', sans-serif;
 }
 
-p, li, span {
+p, li, span, textarea {
     font-size: 1.3em;
     font-weight: 400;
     font-family: 'Adelle', sans-serif;
@@ -80,28 +81,20 @@ main{
 
 
 .place_title-header-flex{
-    font-size: 1.5em;
+    font-size: 1.5em;   
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* .container_header-text p {
-    text-align: center;
-    font-size: 1.5em;
-    width: 500px;
-    margin-top: 50px ;
-    color: lightblue;
-} */
-
 header nav ul{
     display: flex;
     justify-content: space-around;
     list-style-type: none;
     margin-top: 40px;
-    border-top: 1px solid lightblue;
-    border-bottom: 1px solid lightblue;
+    border-top: 1px solid #00A2E8;
+    border-bottom: 1px solid #00A2E8;
 }
 
 header nav ul li{
@@ -114,23 +107,22 @@ header nav ul li{
 .header_intro{
     text-align: center;
     margin: 30px;
-    color: lightblue;
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 600;
+    color: #00A2E8;
 }
 
 header nav ul li:hover{
-    background-color: lightblue;
+    background-color: #00A2E8;
 }
 
 .header_li-selected{
-    background-color: lightblue;
+    background-color: #00A2E8;
 }
 
 .container_header-picto{
     width: 300px;
     height: 200px;
-    background-color: aqua;
 }
 
 .container_image-header{
@@ -158,6 +150,20 @@ header nav ul li:hover{
     background-size: cover;
 }
 
+.white {
+    color:white;    
+}
+
+.title_contact {
+    font-size: 1.6em;
+    font-weight: 700;
+    font-family: 'Adelle', sans-serif;
+}
+
+@media screen and (max-width: 1280px) {
+
+}
+
 /*------------------------------------------------------------------------*/
 
 /*
@@ -170,7 +176,7 @@ footer{
     margin-top: 30px;
     padding-top: 20px;
     font-size: 0.6em;
-    border-top: 1px solid lightblue;
+    border-top: 1px solid #00A2E8;
 }
 
 
@@ -254,13 +260,12 @@ i {
     margin: 15px 0
 }
 
-.test_image-index {
-    width: 450px;
+.image-index {
+    width: 350px;
     height:300px;
-    background: url("./img/picto-plume.png") ;
-    /* background-repeat: no-repeat; */
-    background-size: cover;
-    background-position: center;
+    background: url("./img/picto_livre.jpg") ;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /*------------------------------------------------------------------------*/
@@ -408,25 +413,24 @@ table{
 
 td{
  font-size: 1.1em;
- padding: 20px;
+ padding: 15px;
 }
 
 .array_left{
     text-align: start;
+    line-height: -10px;
 }
 
 .tarif_info{
-    font-size: 10px;
+    font-size: 13px;
+    /* line-height: 10px revert; */
 }
 
-table tr td {
-    /* background-color: aqua; */
+.tarif_info-position{
+    position: relative;
+    top: -10px;
 }
 
-/* .tarif_info-title{
-    background-color: red;
-    width: 300px;
-} */
 
 
 /*------------------------------------------------------------------------*/
@@ -482,11 +486,11 @@ form .button {
 }
 
 form .button:hover {
-    background-color: lightblue;
+    background-color: #00A2E8;
 }
 
 form input:hover{
-    border-color: lightblue;
+    border-color: #00A2E8;
 }
 
 #textarea{
@@ -542,9 +546,10 @@ form input:hover{
 }
 
 .container_form-captcha{
-    border: 2px solid black;
+    border: 1px solid #00A2E8;
+    border-radius: 10px;
     width: 500px;
-    height: 300px;
+    height: auto;
     text-align: center;
     margin: auto;
     display: none;
@@ -559,13 +564,20 @@ form input:hover{
 .captcha {
     width: 350px;
     height: 40px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
     border-radius: 5px;
     outline: none;
     transition: 300ms;
     text-align: center;
     font-size: 1.2em;
     margin: 10px 0;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+#textarea{
+    border: 1px solid lightgray;
+    outline: none;
 }
 
 /*------------------------------------------------------------------------*/

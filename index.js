@@ -13,7 +13,6 @@ let objectError = {
   phone: "",
   message: "",
   empty: "",
-  captcha: "",
 };
 
 function checkData() {
@@ -157,11 +156,11 @@ function checkCaptchaThenSendMail() {
     .join("");
 
   if (captcha !== valueCaptcha) {
-    objectError.phone = "Captcha incorrect";
-    console.log(objectError);
+    document.querySelector(".captcha-error").style.display = "block";
+    document.querySelector(".captcha-error").innerText = "Captcha incorrect";
     return;
   }
-  objectError.phone = "";
+  document.querySelector(".captcha-error").style.display = "none";
   sendMail();
 }
 
@@ -173,7 +172,7 @@ function sendMail() {
     .send(serviceId, templateId, params, "_mCJ-wnI1bVbtTscw")
     .then((res) => {
       alert(
-        "Votre message à bien été envoyé, je vous repondrais dans les plus bref delais"
+        "Votre message à bien été envoyé, je vous repondrai dans les plus bref delais"
       );
       window.location = "/";
       // document.getElementById("name").value = "";
