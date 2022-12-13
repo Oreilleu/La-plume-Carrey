@@ -1,51 +1,54 @@
 // Send email from form
 let containerError = document.getElementsByClassName("container-error");
+let params = {
+  name: "",
+  surName: "",
+  email: "",
+  phone: "",
+  message: "",
+};
 let objectError = {
   name: "",
   email: "",
   phone: "",
   message: "",
   empty: "",
+  captcha: "",
 };
 
-function sendMail() {
-  const params = {
+function checkData() {
+  params = {
     name: document.getElementById("name").value,
     surName: document.getElementById("surname").value,
     email: document.getElementById("email").value,
     phone: document.getElementById("phone").value,
     message: document.getElementById("textarea").value,
   };
-
   if (
     checkName(params) &&
     checkEmpty(params) &&
     checkEmail(params) &&
     checkPhone(params)
   ) {
-    const templateId = "template_icmmgx9";
-    const serviceId = "service_9o1u1aq";
-
-    emailjs
-      .send(serviceId, templateId, params, "_mCJ-wnI1bVbtTscw")
-      .then((res) => {
-        console.log("herrre");
-        alert("ca passe");
-        document.getElementById("name").value = "";
-        document.getElementById("surname").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("textarea").value = "";
-      })
-      .catch((err) => {
-        console.log(err);
-        console.log("ca marche pas");
-      });
+    document.querySelector(".form_email").style.display = "none";
+    document.querySelector(".container_form-captcha").style.display = "block";
   } else {
-    // Afficher les erreur
-    console.log(objectError);
+    let container = document.querySelector(".container-error");
+    let ul = document.createElement("ul");
+    container.appendChild(ul);
+    ul.setAttribute("class", "container_li-error");
+
+    let li = document.createElement("li");
+    for (value in objectError) {
+      if (objectError[value]) {
+        li.innerText = objectError[value];
+        ul.appendChild(li);
+      }
+    }
   }
 }
+
+// Vérification données
 
 function checkEmpty(params) {
   if (
@@ -62,6 +65,8 @@ function checkEmpty(params) {
 }
 
 function checkName(params) {
+  let regex = new RegExp("^[a-zA-Z]$");
+  const tableNumberAndCharSpe = "1234567890#{([|\\@])}=+$£¤*µ%§/:;";
   if (
     params.name.split("").length < 2 ||
     params.name.split("").length > 30 ||
@@ -69,16 +74,17 @@ function checkName(params) {
     params.surName.split("").length > 30
   ) {
     objectError.name =
-      "Le nom et prénom doivent être supèrieur à 2 et infèrieurs à 40 caractère";
-    return false;
-  } else if (
-    params.name.includes("0123456789?,.;/:§!%µ*£$¤+={}[]()@\\|#~&²") ||
-    params.surName.includes("0123456789?,.;/:§!%µ*£$¤+={}[]()@\\|#~&²")
-  ) {
-    objectError.name =
-      "Les nom et prénoms ne doivent pas contenir de caractère spéciaux n'y de chiffre";
+      "Le nom et prénom doivent être supèrieur à 2 et infèrieurs à 30 caractère";
     return false;
   }
+  // else if (
+  //   params.name.includes(tableNumberAndCharSpe) ||
+  //   params.surName.includes(tableNumberAndCharSpe)
+  // ) {
+  //   objectError.name =
+  //     "Les nom et prénoms ne doivent pas contenir de caractère spéciaux n'y de chiffre";
+  //   return false;
+  // }
   objectError.name = "";
   return true;
 }
@@ -95,33 +101,90 @@ function checkEmail(params) {
 }
 
 function checkPhone(params) {
-  const phoneNumber = params.phone
-    .split("")
+  if (params.phone) {
+    const phoneNumber = params.phone
+      .split("")
+      .reduce((acc, current) => (current === " " ? acc : [...acc, current]), "")
+      .join("");
+
+    const regex = new RegExp(
+      "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$"
+    );
+
+    if (regex.test(phoneNumber)) {
+      objectError.phone = "";
+      return true;
+    } else {
+      objectError.phone = "Le numéro de téléphone n'est pas valide";
+      return false;
+    }
+  }
+  return true;
+}
+
+// Gestion captcha
+setCaptcha();
+
+function generateArray() {
+  let out = [];
+  const characters =
+    "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789".split("");
+
+  for (let i = 0; i < 6; i++) {
+    let randomCharacters =
+      characters[Math.floor(Math.random() * characters.length)];
+    out.push(randomCharacters);
+  }
+  return out;
+}
+
+function setCaptcha() {
+  const randomCharacters = generateArray().join(" ");
+  document.querySelector(".captcha").innerHTML = randomCharacters;
+}
+
+function checkCaptchaThenSendMail() {
+  const captcha = document
+    .querySelector(".captcha")
+    .innerHTML.split("")
     .reduce((acc, current) => (current === " " ? acc : [...acc, current]), "")
     .join("");
 
-  const regex = new RegExp(
-    "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$"
-  );
+  const valueCaptcha = document
+    .querySelector(".value-captcha")
+    .value.split("")
+    .reduce((acc, current) => (current === " " ? acc : [...acc, current]), "")
+    .join("");
 
-  if (regex.test(phoneNumber)) {
-    objectError.phone = "";
-    return true;
-  } else {
-    objectError.phone = "Le numéro de téléphone n'est pas valide";
-    return false;
+  if (captcha !== valueCaptcha) {
+    objectError.phone = "Captcha incorrect";
+    console.log(objectError);
+    return;
   }
+  objectError.phone = "";
+  sendMail();
 }
 
-// La captcha
+function sendMail() {
+  const templateId = "template_icmmgx9";
+  const serviceId = "service_9o1u1aq";
 
-// Fonction qui génère 8 chiffres et lettres aléatoire
-function generateArray() {
-  const dico = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
+  emailjs
+    .send(serviceId, templateId, params, "_mCJ-wnI1bVbtTscw")
+    .then((res) => {
+      alert(
+        "Votre message à bien été envoyé, je vous repondrais dans les plus bref delais"
+      );
+      window.location = "/";
+      // document.getElementById("name").value = "";
+      // document.getElementById("surname").value = "";
+      // document.getElementById("email").value = "";
+      // document.getElementById("phone").value = "";
+      // document.getElementById("textarea").value = "";
+    })
+    .catch((err) => {
+      console.log(err);
+      alert("Un problème est survenue !");
+      window.location = "/";
+    });
 }
-generateArray();
-// Au clique sur reload on relance la fonction génératrice et on rempli la div
-
-// Au clique sur submit on compare le contenu de la div avec la donnée saisie
-
-// Si identique return true
