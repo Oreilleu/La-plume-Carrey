@@ -1,5 +1,6 @@
 // Send email from form
 let containerError = document.getElementsByClassName("container-error");
+
 let params = {
   name: "",
   surName: "",
@@ -7,6 +8,7 @@ let params = {
   phone: "",
   message: "",
 };
+
 let objectError = {
   name: "",
   email: "",
